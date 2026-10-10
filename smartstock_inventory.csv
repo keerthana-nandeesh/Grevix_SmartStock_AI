@@ -1,0 +1,11 @@
+Part,Category,Vehicle Compatibility,Stock,Reorder Level,Monthly Demand,Unit Price (₹),Supplier,Lead Time (Days),Safety Stock
+Engine Oil,Lubricants,Universal,25,10,18,450,AutoParts Supplies,3,5
+Oil Filter,Filters,Maruti Swift,8,15,20,250,FilterPro,5,4
+Air Filter,Filters,Hyundai i20,12,10,12,350,FilterPro,4,3
+Brake Pads,Braking,Honda City,6,12,16,1200,SafeStop Auto,7,5
+Spark Plug,Ignition,Maruti Swift,30,10,14,180,PowerSpark,3,5
+Clutch Plate,Transmission,Tata Nexon,4,8,6,2800,DriveLine Parts,10,2
+Coolant,Cooling,Universal,18,8,10,300,AutoParts Supplies,3,4
+Headlight Bulb,Electrical,Hyundai i20,20,10,15,220,BrightDrive,4,5
+Drive Belt,Engine Parts,Tata Nexon,7,10,12,650,DriveLine Parts,6,3
+Brake Fluid,Braking,Universal,15,8,7,400,SafeStop Auto,3,3
