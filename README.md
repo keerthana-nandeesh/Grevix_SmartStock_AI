@@ -1,43 +1,48 @@
 # 📦 SmartStock AI
 
-Smart inventory monitoring and stock planning for automobile spare-parts shops.
+**Intelligent Automobile Spare Parts Inventory Planner**
+
+🚀 **[Launch Live Demo](https://smartstock-ai-npxafahrqez6jkgrjo2p5.streamlit.app)**
+
+SmartStock AI is a web-based inventory planning tool designed to help automobile spare-parts shops monitor stock and make smarter purchasing decisions.
 
 ## Features
 - **Dashboard**: KPI cards, inventory health score, rule-based insights, stock vs minimum level, days of cover vs supplier lead time, Pareto/ABC analysis, value treemap and donut
-- **Inventory**: add parts, edit in a table, delete rows, live stock board with status and recommended action
-- **Restock Planner**: suggested order quantities, urgent vs soon, budget what-if, one draft purchase order per supplier (CSV)
-- **Suppliers & Vehicles**: value and lead time per supplier, coverage per vehicle model
-- **Data & Export**: CSV export, CSV import (merge or replace), blank template, reset to sample data
-- **Search & filters**: part, supplier, category, vehicle (with universal parts), stock status
-- **Persistence**: every change is saved to `smartstock_inventory.csv` next to `app.py`
+- **Inventory**: Add parts, edit in a table, delete rows, and view stock status and recommended actions
+- **Restock Planner**: Suggested order quantities, urgency levels, budget planning, and draft purchase orders
+- **Suppliers & Vehicles**: Supplier value, lead times, and vehicle-model coverage
+- **Data & Export**: CSV export/import, blank template, and reset to sample data
+- **Search & Filters**: Search by part, supplier, category, vehicle, or stock status
 
-## Run it
+## Tech Stack
+- Python
+- Streamlit
+- Pandas
+- Plotly
+
+## How to Run
 ```bash
 python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## How the restocking rule works
-```
-target stock    = max( demand over (lead time + extra cover days), minimum level + 1 ) + safety stock
+## How the Restocking Rule Works
+
+```text
+target stock = max(demand over lead time + extra cover days, minimum level + 1) + safety stock
 suggested order = max(0, target stock - current stock)
 ```
-- **Order now**: stock is zero, or will run out before a delivery can arrive
-- **Order soon**: a top-up is needed but there is still time
-- Status: Out of Stock, Critical (at/below minimum and runs out before delivery), Low Stock (at/below minimum), Healthy, Overstock (more than N days of cover)
-- ABC class: A = parts making up the first 80% of annual usage value, B = next 15%, C = rest
 
-This is a **rule-based estimate, not a trained machine-learning model**. A future version could forecast demand from sales history and seasonality.
+This is a **rule-based estimate, not a trained machine-learning model**. A future version could forecast demand using sales history and seasonality.
 
-## Project layout
+## Project Layout
+
 | File | Purpose |
 |---|---|
 | `app.py` | Streamlit interface |
-| `smartstock_core.py` | Calculations (no Streamlit dependency) |
-| `test_core.py` | Tests: `python test_core.py` or `pytest` |
+| `smartstock_core.py` | Inventory calculations |
+| `test_core.py` | Automated tests |
 | `.streamlit/config.toml` | Dark theme |
 
-## Important
-Sample inventory, prices, suppliers and demand figures are illustrative. Replace them with verified business data before real-world use.
+**Note:** This is a prototype demonstrated using sample inventory data. Validate recommendations with real business data before operational use.
