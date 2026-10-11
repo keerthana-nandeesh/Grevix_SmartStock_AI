@@ -2,7 +2,7 @@
 
 **Intelligent Automobile Spare Parts Inventory Planner**
 
-🚀 **[Launch Live Demo](https://smartstock-ai-npxafahrqez6jkgrjo2p5.streamlit.app)**
+🚀 **[Launch Live Demo](https://grevixsmartstockai-43p32nefxhiuo5irprrb6w.streamlit.app/)**
 
 SmartStock AI is a web-based inventory planning tool designed to help automobile spare-parts shops monitor stock and make smarter purchasing decisions.
 
